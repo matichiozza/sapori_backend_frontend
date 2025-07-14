@@ -1,0 +1,301 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Tarjeta principal -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="6dp"
+        android:elevation="6dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        android:clipToOutline="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Imagen de fondo -->
+            <ImageView
+                android:id="@+id/imagen_receta"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
+
+            <!-- Capa oscura semi-transparente -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="#80000000" />
+
+            <!-- Contenido superpuesto -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:padding="16dp">
+
+                <!-- Nombre del platillo -->
+                <TextView
+                    android:id="@+id/txt_nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hamburguesa de Carne"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/poppinsbold" />
+
+                <!-- Autor con ícono -->
+                <LinearLayout
+                    android:id="@+id/cartel"
+                    android:layout_below="@id/txt_nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/txt_fecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="-2dp"
+                        android:layout_marginEnd="0dp"
+                        android:src="@drawable/tu_icono"
+                        app:tint="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/publicadopor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Publicado por "
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppinsregular" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/nombreautor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Máximo Paulucci"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppinsbold" />
+
+                        <View
+                            android:id="@+id/linea"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#FFFFFF"
+                            android:layout_marginTop="-5dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Fila inferior con íconos -->
+                <LinearLayout
+                    android:id="@+id/dw"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="4dp">
+
+                    <!-- Porciones + Tiempo -->
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp">
+
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/info_background" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp">
+
+                            <!-- Personas -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="16dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="23dp"
+                                    android:layout_height="23dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="1dp"
+                                    android:src="@drawable/ic_people"
+                                    app:tint="#444444" />
+
+                                <TextView
+                                    android:id="@+id/txt_porciones"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textColor="#444444"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <!-- Tiempo -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="23dp"
+                                    android:layout_height="23dp"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:src="@drawable/ic_timer"
+                                    android:translationY="1dp"
+                                    app:tint="#444444" />
+
+                                <TextView
+                                    android:id="@+id/tiempo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textColor="#444444"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <!-- Calificación -->
+                    <FrameLayout
+                        android:layout_width="60dp"
+                        android:layout_height="40dp">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/info_background" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:translationY="1dp">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/ic_star"
+                                app:tint="#FFD700" />
+
+                            <TextView
+                                android:id="@+id/calificacion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="1dp"
+                                android:text="-"
+                                android:textColor="#444444"
+                                android:textSize="12sp"
+                                android:translationY="-2dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <!-- Overlay blanco para selección -->
+            <View
+                android:id="@+id/overlay_seleccion"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/fondo_seleccionado"
+                android:visibility="gone"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/icono_seleccion"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="160dp"
+                android:src="@drawable/icono_seleccionado"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txt_seleccionada"
+                android:layout_width="wrap_content"
+                android:layout_height="59dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/poppinsbold"
+                android:padding="16dp"
+                android:text="SELECCIONADA"
+                android:textColor="#121212"
+                android:textSize="24sp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Botón favorito fijo fuera de la tarjeta -->
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="12dp"
+        android:translationY="27dp"
+        android:layout_marginTop="-14dp"
+        android:elevation="10dp">
+
+        <View
+            android:id="@+id/botonVerde"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittext_bg_rounded_6" />
+
+        <ToggleButton
+            android:id="@+id/btn_favorito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="2.7dp"
+            android:background="@null"
+            android:button="@drawable/favorito_selector"
+            android:textOff=""
+            android:textOn=""
+            android:text="" />
+    </FrameLayout>
+</FrameLayout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ScrollView con contenido -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="20dp"
+                android:background="#F0EBE4"
+                android:elevation="5dp">
+
+                <ImageView
+                    android:id="@+id/btn_cerrar"
+                    android:layout_width="38dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="75dp"
+                    android:src="@drawable/flecha" />
+
+                <TextView
+                    android:id="@+id/text_filtros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/btn_cerrar"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_toEndOf="@id/btn_cerrar"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:text="VER DETALLE"
+                    android:textColor="#5E5E5E"
+                    android:textSize="28sp" />
+            </RelativeLayout>
+
+            <!-- TextView 'nombresede' ahora dentro del LinearLayout -->
+            <TextView
+                android:id="@+id/nombresede"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="40dp"
+                android:text="nombre"
+                android:textColor="#838383"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppinsmedium" />
+
+            <FrameLayout
+                android:id="@+id/rectangulo_central"
+                android:layout_width="334dp"
+                android:layout_height="491dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rectangulo_redondeado">
+
+                <!-- ImageView dentro del rectángulo -->
+                <ImageView
+                    android:id="@+id/imagen_sede"
+                    android:layout_width="296dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/rounded_image"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagen_default" />
+
+                <!-- Rectángulo con scroll interno -->
+                <FrameLayout
+                    android:id="@+id/rectangulo_2"
+                    android:layout_width="310dp"
+                    android:layout_height="177dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="135dp"
+                    android:background="@drawable/rectangulo_redondeado_2">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fillViewport="true">
+
+                        <!-- Contenedor dinámico donde agregarás los rectángulos de cursos -->
+                        <LinearLayout
+                            android:id="@+id/containerCursos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp" />
+                    </ScrollView>
+
+                </FrameLayout>
+
+                <!-- TextView debajo de la imagen -->
+                <TextView
+                    android:id="@+id/texto_bajo_imagen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="190dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Datos de la sede:"
+                    android:textColor="#363636"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/text_direccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="212dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Dirección: Mendoza 629"
+                    android:textColor="#9D9D9D"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/text_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="230dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Teléfono: +54 9 11 2363-6452"
+                    android:textColor="#9D9D9D"
+                    android:textSize="12sp" />
+
+                <!-- Línea divisora encima de "Cursos disponibles:" -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="255dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="#DDDDDD" />
+
+                <TextView
+                    android:id="@+id/text_Cursos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="260dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Cursos disponibles:"
+                    android:textColor="#363636"
+                    android:textSize="14sp" />
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

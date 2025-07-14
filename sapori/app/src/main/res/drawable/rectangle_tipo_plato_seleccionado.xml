@@ -1,0 +1,5 @@
+<!-- res/drawable/rectangle_tipo_plato_seleccionado.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#2E8137"/> <!-- verde claro -->
+    <corners android:radius="20dp" />
+</shape>

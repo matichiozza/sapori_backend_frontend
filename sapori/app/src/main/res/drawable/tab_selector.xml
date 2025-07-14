@@ -1,0 +1,13 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape>
+            <solid android:color="#2E8137" /> <!-- Verde para pestaña activa -->
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@android:color/white" /> <!-- Blanco para pestaña inactiva -->
+            <stroke android:width="2dp" android:color="#2E8137" /> <!-- Borde verde -->/>
+        </shape>
+    </item>
+</selector>

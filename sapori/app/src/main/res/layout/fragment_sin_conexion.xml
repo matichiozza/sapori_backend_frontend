@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_sin_conexion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EF5350"
+    android:gravity="center"
+    android:padding="24dp"
+    android:fitsSystemWindows="false"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/ic_globe_error"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Icono sin conexión" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIN CONEXIÓN"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btn_reintentar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REINTENTAR"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:background="@drawable/boton_blanco_redondo"
+            android:textColor="#EF5350"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp" />
+    </LinearLayout>
+
+</RelativeLayout>

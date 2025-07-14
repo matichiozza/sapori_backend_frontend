@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_card_sede_selector"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp"
+    android:gravity="center_vertical"
+    android:elevation="2dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/verde_activo"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:clickable="false"
+        android:focusable="false">
+
+        <TextView
+            android:id="@+id/txtNombreSede"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sede Centro"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#363636"
+            android:fontFamily="@font/poppinsbold"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <TextView
+            android:id="@+id/txtDescuento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20% OFF"
+            android:textSize="13sp"
+            android:textColor="#B88600"
+            android:visibility="gone"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppinsmedium" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnVerDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:background="@drawable/boton_verde"
+        android:text="Ver detalle"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/poppinsmedium" />
+
+</LinearLayout> 

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sapori</string>
+    <string name="login_button">INICIAR SESIÓN</string>
+    <string name="register_text">¿No tienes cuenta? Registrate!</string>
+    <string name="latest_recipes">ULTIMAS RECETAS</string>
+    <string name="title_activity_recetas">RecetasActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

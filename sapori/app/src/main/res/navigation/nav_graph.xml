@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.example.sapori.InicioFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio">
+
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_registro"
+            app:destination="@id/nav_registro" />
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_login"
+            app:destination="@id/nav_login" />
+        <action
+            android:id="@+id/action_nav_inicio_to_detalleRecetaFragment"
+            app:destination="@id/fragment_detalle_receta" />
+    </fragment>
+
+    <!-- RECETAS -->
+    <fragment
+        android:id="@+id/nav_recetas"
+        android:name="com.example.sapori.RecetasFragment"
+        android:label="Recetas"
+        tools:layout="@layout/fragment_recetas">
+        <action
+            android:id="@+id/action_nav_recetas_to_nav_buscar_recetas"
+            app:destination="@id/nav_buscar_recetas" />
+        <action
+            android:id="@+id/action_nav_recetas_to_nav_buscar_recetas_favoritas"
+            app:destination="@id/nav_buscar_recetas_favoritas" />
+        <action
+            android:id="@+id/action_nav_buscar_recetas_to_nav_gestionar_recetas"
+            app:destination="@id/nav_gestionar_recetas" />
+        <action
+            android:id="@+id/action_nav_recetas_to_nav_recetas_calculadas"
+            app:destination="@id/nav_recetas_calculadas" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gestionar_recetas"
+        android:name="com.example.sapori.GestionarRecetasFragment"
+        android:label="Gestionar Recetas"
+        tools:layout="@layout/fragment_gestionar_recetas">
+
+        <action
+            android:id="@+id/action_gestionarRecetas_to_agregarReceta"
+            app:destination="@id/agregarRecetaFragment" />
+
+        <action
+            android:id="@+id/action_gestionarRecetas_to_detalleRecetaFragment"
+            app:destination="@id/fragment_detalle_receta" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_buscar_recetas_favoritas"
+        android:name="com.example.sapori.RecetasFavoritasFragment"
+        android:label="Recetas Favoritas"
+        tools:layout="@layout/fragment_gestionar_recetas">
+
+        <action
+            android:id="@+id/action_nav_recetas_favoritas_to_detalleRecetaFragment"
+            app:destination="@id/fragment_detalle_receta" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_recetas_calculadas"
+        android:name="com.example.sapori.RecetasCalculadasFragment"
+        android:label="Recetas Calculadas"
+        tools:layout="@layout/fragment_recetas_calculadas">
+        <action
+            android:id="@+id/nav_recetas_calculadas_to_detalleRecetaCalculadaFragment"
+            app:destination="@id/fragment_detalle_receta_calculada" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_buscar_recetas"
+        android:name="com.example.sapori.BuscarRecetasFragment"
+        android:label="Buscar Recetas"
+        tools:layout="@layout/fragment_buscar_recetas">
+        <action
+            android:id="@+id/action_nav_buscar_recetas_to_nav_recetas"
+            app:destination="@id/nav_recetas" />
+        <action
+            android:id="@+id/action_nav_buscar_recetas_to_fragment_filtrar_receta"
+            app:destination="@id/fragment_filtrar_receta" />
+        <action
+            android:id="@+id/action_nav_buscar_recetas_to_detalleRecetaFragment"
+            app:destination="@id/fragment_detalle_receta" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_detalle_receta"
+        android:name="com.example.sapori.DetalleRecetaFragment"
+        android:label="Detalle receta"
+        tools:layout="@layout/fragment_detalle_receta">
+
+        <!-- Acción que va desde Detalle a Modificar -->
+        <action
+            android:id="@+id/action_detalleReceta_to_editarReceta"
+            app:destination="@id/fragment_modificar_receta" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_modificar_receta"
+        android:name="com.example.sapori.ModificarRecetaFragment"
+        android:label="Modificar Receta"
+        tools:layout="@layout/fragment_modificar_receta" />
+
+    <fragment
+        android:id="@+id/fragment_detalle_receta_calculada"
+        android:name="com.example.sapori.DetalleRecetaCalculadaFragment"
+        android:label="Detalle receta Calculada"
+        tools:layout="@layout/fragment_detalle_receta_calculada" />
+
+    <fragment
+        android:id="@+id/fragment_filtrar_receta"
+        android:name="com.example.sapori.FiltrarRecetaFragment"
+        android:label="Filtrar Recetas"
+        tools:layout="@layout/fragment_filtrar_receta" />
+
+    <fragment
+        android:id="@+id/nav_cursos"
+        android:name="com.example.sapori.CursosFragment"
+        android:label="Cursos"
+        tools:layout="@layout/fragment_cursos" />
+
+    <fragment
+        android:id="@+id/nav_ajustes"
+        android:name="com.example.sapori.AjustesFragment"
+        android:label="Ajustes"
+        tools:layout="@layout/fragment_ajustes">
+        <action
+            android:id="@+id/action_ajustes_to_datosPersonales"
+            app:destination="@id/nav_datos_personales" />
+        <action
+            android:id="@+id/action_ajustes_to_cambiarContrasenia"
+            app:destination="@id/fragment_recuperar_contrasenia_1" />
+        <action
+            android:id="@+id/action_global_nav_inicio"
+            app:destination="@id/nav_inicio"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_ajustes_to_registroAlumno"
+            app:destination="@id/fragment_registro_alumno" />
+        <action
+            android:id="@+id/action_ajustes_to_cuentaCorrienteFragment"
+            app:destination="@id/cuentaCorrienteFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_registro_alumno"
+        android:name="com.example.sapori.RegistroAlumnoFragment"
+        android:label="Registro Alumno"
+        tools:layout="@layout/fragment_registro_alumno" >
+        <action
+            android:id="@+id/action_fragment_completar_registro_to_fragment_finalizar_registro2"
+            app:destination="@id/fragment_finalizar_registro" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_finalizar_registro"
+        android:name="com.example.sapori.FinalizarRegistroFragment"
+        android:label="Finalizar Registro"
+        tools:layout="@layout/fragment_finalizar_registro">
+
+        <action
+            android:id="@+id/action_fragment_finalizar_registro_to_nav_inicio"
+            app:destination="@id/nav_inicio" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/agregarRecetaFragment"
+        android:name="com.example.sapori.AgregarRecetaFragment"
+        android:label="Agregar Receta"
+        tools:layout="@layout/fragment_agregar_receta" />
+
+    <fragment
+        android:id="@+id/nav_datos_personales"
+        android:name="com.example.sapori.DatosPersonalesFragment"
+        android:label="Mis Datos Personales"
+        tools:layout="@layout/fragment_datos_personales" />
+
+    <fragment
+        android:id="@+id/nav_registro"
+        android:name="com.example.sapori.RegistroFragment"
+        android:label="Registro"
+        tools:layout="@layout/fragment_registro"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left">
+        <action
+            android:id="@+id/action_nav_registro_to_fragment_confirmacion_codigo"
+            app:destination="@id/fragment_confirmacion_codigo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_confirmacion_codigo"
+        android:name="com.example.sapori.CodigoConfirmacionFragment"
+        android:label="Confirmar Código"
+        tools:layout="@layout/fragment_confirmacion_codigo">
+        <action
+            android:id="@+id/action_fragment_confirmacion_codigo_to_fragment_completar_registro"
+            app:destination="@id/fragment_completar_registro" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_completar_registro"
+        android:name="com.example.sapori.CompletarRegistroFragment"
+        android:label="Completar Registro"
+        tools:layout="@layout/fragment_datos_finales" />
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.example.sapori.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left">
+        <action
+            android:id="@+id/action_nav_login_to_nav_inicio"
+            app:destination="@id/nav_inicio" />
+        <action
+            android:id="@+id/action_nav_login_to_fragment_recuperar_contrasenia_1"
+            app:destination="@id/fragment_recuperar_contrasenia_1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_recuperar_contrasenia_1"
+        android:name="com.example.sapori.RecuperarContraseniaFragment_1"
+        android:label="Recuperar contraseña"
+        tools:layout="@layout/fragment_recuperar_contrasenia_1">
+        <action
+            android:id="@+id/action_fragment_recuperar_contrasenia_1_to_fragment_recuperar_contrasenia_2"
+            app:destination="@id/fragment_recuperar_contrasenia_2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_recuperar_contrasenia_2"
+        android:name="com.example.sapori.RecuperarContraseniaFragment_2"
+        android:label="Código Recuperación"
+        tools:layout="@layout/fragment_recuperar_contrasenia_2">
+        <action
+            android:id="@+id/action_fragment_recuperar_contrasenia_2_to_fragment_recuperar_contrasenia_3"
+            app:destination="@id/fragment_recuperar_contrasenia_3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_recuperar_contrasenia_3"
+        android:name="com.example.sapori.RecuperarContraseniaFragment_3"
+        android:label="Restablecer Contraseña"
+        tools:layout="@layout/fragment_recuperar_contrasenia_3" />
+
+    <fragment
+        android:id="@+id/fragment_acceso_denegado"
+        android:name="com.example.sapori.AccesoDenegadoFragment"
+        android:label="Acceso Denegado"
+        tools:layout="@layout/fragment_acceso_denegado" />
+
+    <fragment
+        android:id="@+id/fragment_buscar_cursos"
+        android:name="com.example.sapori.BuscarCursosFragment"
+        android:label="Buscar Cursos"
+        tools:layout="@layout/fragment_buscar_cursos">
+
+        <action
+            android:id="@+id/action_buscarCursosFragment_to_detalleCursoFragment"
+            app:destination="@id/fragment_detalle_curso" />
+        <action
+            android:id="@+id/action_buscarCursosFragment_to_verSedesFragment"
+            app:destination="@id/fragment_ver_sedes" />
+        <action
+            android:id="@+id/action_buscarCursosFragment_to_MisCursosFragment"
+            app:destination="@id/fragment_mis_cursos" />
+
+        <action
+            android:id="@+id/action_buscarCursosFragment_to_detalleCursoFragmentVisitante"
+            app:destination="@id/detalleCursoFragmentVisitante" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleCursoFragmentVisitante"
+        android:name="com.example.sapori.DetalleCursoFragmentVisitante"
+        android:label="Detalle Curso Visitante"
+        tools:layout="@layout/fragment_detallecurso_visitante" />
+
+    <fragment
+        android:id="@+id/fragment_detalle_curso"
+        android:name="com.example.sapori.DetalleCursoFragment"
+        android:label="Detalle Curso"
+        tools:layout="@layout/fragment_detalle_curso">
+        <argument
+            android:name="cursoId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_detalleCursoFragment_to_seleccionarSedeFragment"
+            app:destination="@id/fragment_seleccionar_sede">
+            <argument
+                android:name="cursoId"
+                app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_acceso_denegado2"
+        android:name="com.example.sapori.AccesoDenegado2"
+        android:label="Acceso Denegado"
+        tools:layout="@layout/fragment_acceso_denegado_usuario" />
+
+    <fragment
+        android:id="@+id/fragment_ver_sedes"
+        android:name="com.example.sapori.VerSedesFragment"
+        android:label="Ver Sedes"
+        tools:layout="@layout/fragment_ver_sedes">
+        <action
+            android:id="@+id/action_verSedesFragment_to_detalleSedeFragment"
+            app:destination="@id/fragment_detalle_sede" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_mis_cursos"
+        android:name="com.example.sapori.MisCursosFragment"
+        android:label="Ver Sedes"
+        tools:layout="@layout/fragment_mis_cursos">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_detalle_sede"
+        android:name="com.example.sapori.DetalleSedeFragment"
+        android:label="Detalle Sede"
+        tools:layout="@layout/fragment_detalle_sede" />
+
+    <fragment
+        android:id="@+id/qrFragment"
+        android:name="com.example.sapori.QrFragment"
+        android:label="Escanear QR"
+        tools:layout="@layout/fragment_qr" />
+
+    <fragment
+        android:id="@+id/cuentaCorrienteFragment"
+        android:name="com.example.sapori.CuentaCorrienteFragment"
+        android:label="Cuenta Corriente"
+        tools:layout="@layout/fragment_cuenta_corriente" />
+
+    <fragment
+        android:id="@+id/fragment_pago"
+        android:name="com.example.sapori.PagoFragment"
+        android:label="Pago"
+        tools:layout="@layout/fragment_pago">
+        <argument
+            android:name="curso"
+            app:argType="com.example.sapori.model.Curso" />
+        <argument
+            android:name="sede"
+            app:argType="com.example.sapori.model.CursoSede" />
+        <action
+            android:id="@+id/action_pagoFragment_to_resumenInscripcionFragment"
+            app:destination="@id/resumenInscripcionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resumenInscripcionFragment"
+        android:name="com.example.sapori.ResumenInscripcionFragment"
+        android:label="Resumen Inscripción"
+        tools:layout="@layout/fragment_resumen_inscripcion">
+        <action
+            android:id="@+id/action_resumenInscripcionFragment_to_inscripcionExitosaFragment"
+            app:destination="@id/inscripcionExitosaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inscripcionExitosaFragment"
+        android:name="com.example.sapori.InscripcionExitosaFragment"
+        android:label="Inscripción Exitosa"
+        tools:layout="@layout/fragment_inscripcion_exitosa" />
+
+
+
+
+    <fragment
+        android:id="@+id/fragment_seleccionar_sede"
+        android:name="com.example.sapori.SeleccionarSedeFragment"
+        android:label="Seleccionar Sede"
+        tools:layout="@layout/fragment_seleccionar_sede">
+        <argument
+            android:name="cursoId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_seleccionarSedeFragment_to_pagoFragment"
+            app:destination="@id/fragment_pago">
+            <argument
+                android:name="curso"
+                app:argType="com.example.sapori.model.Curso" />
+            <argument
+                android:name="sede"
+                app:argType="com.example.sapori.model.CursoSede" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleCursoFragment2"
+        android:name="com.example.sapori.DetalleCursoFragment2"
+        android:label="Detalle Curso"
+        tools:layout="@layout/fragment_detalle_curso2">
+        <action
+            android:id="@+id/action_detalleCursoFragment2_to_materialesClaseFragment"
+            app:destination="@id/materialesClaseFragment" />
+        <action
+            android:id="@+id/action_detalleCursoFragment2_to_asistenciaFragment"
+            app:destination="@id/asistenciaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/asistenciaFragment"
+        android:name="com.example.sapori.AsistenciaFragment"
+        android:label="Ver Asistencia"
+        tools:layout="@layout/fragment_asistencia" />
+
+    <fragment
+        android:id="@+id/materialesClaseFragment"
+        android:name="com.example.sapori.MaterialesClaseFragment"
+        android:label="Materiales de Clase"
+        tools:layout="@layout/fragment_materiales_clase" />
+
+</navigation>

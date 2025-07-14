@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Imagen principal con ViewPager2 y botones atrás/favorito -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="315dp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerImagenes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
+
+
+
+            <!-- Puntitos indicadores -->
+            <LinearLayout
+                android:id="@+id/indicatorLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="270dp"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
+
+            <ImageButton
+                android:id="@+id/btnAtras"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="31dp"
+                android:background="@drawable/bg_circle_green_2"
+                android:src="@drawable/flecha_blanca"
+                android:scaleType="fitCenter"
+                android:padding="7dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="58dp"
+                android:contentDescription="Atrás" />
+
+            <ImageButton
+                android:id="@+id/btnLapiz"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="31dp"
+                android:background="@drawable/bg_circle_green_2"
+                android:src="@drawable/lapiz"
+                android:scaleType="fitCenter"
+                android:padding="7dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="58dp"
+                android:contentDescription="lapiz"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/btnFavorito"
+                android:layout_width="63dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_rectangle_green"
+                android:src="@drawable/corazon_vacio"
+                android:scaleType="center"
+                android:paddingBottom="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="230dp"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="Favorito"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <!-- Tarjeta con título, autor, info tiempo, rating y porciones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_white_rounded"
+            android:layout_marginTop="-30dp"
+            android:padding="20dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guiso de Ternera"
+                android:textSize="27sp"
+                android:textColor="#363636"
+                android:fontFamily="@font/poppinsbold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/verificado" />
+
+                <TextView
+                    android:id="@+id/txtAutor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Publicado por Marcos Pirchio"
+                    android:textSize="14sp"
+                    android:textColor="#363636"
+                    android:fontFamily="@font/poppinsregular" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_time" />
+
+                    <TextView
+                        android:id="@+id/txtTiempo"
+                        android:layout_marginStart="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45 min"
+                        android:textColor="#363636"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/star_green" />
+
+                    <TextView
+                        android:id="@+id/txtCalificacion"
+                        android:layout_marginStart="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.5"
+                        android:textColor="#363636"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical|end">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_portions" />
+
+                    <TextView
+                        android:id="@+id/txtPorciones"
+                        android:layout_marginStart="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textColor="#363636"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Contenido con descripción, ingredientes y pasos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                android:id="@+id/txtTituloDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Descripción"
+                android:textColor="#363636"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="#9D9D9D"
+                android:textSize="14sp" />
+
+            <!-- Ingredientes header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtTituloIngredientes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:text="Ingredientes"
+                    android:textColor="#363636"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/btnEscalar"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/edittext_bg_rounded_1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/poppinsregular"
+                    android:gravity="center"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp"
+                    android:text="Escalar receta"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- RecyclerView horizontal de ingredientes -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerIngredientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:orientation="horizontal" />
+
+
+            <!-- Pasos título -->
+            <TextView
+                android:id="@+id/txtTituloPasos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:gravity="center_horizontal"
+                android:text="Pasos de la receta"
+                android:textColor="#363636"
+                android:textSize="16sp" />
+
+            <!-- RecyclerView para pasos -->
+            <LinearLayout
+                android:id="@+id/layoutPasos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"/>
+
+
+        </LinearLayout>
+
+        <!-- Valoración -->
+        <!-- Valoración -->
+        <LinearLayout
+            android:id="@+id/layoutValoracion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:padding="20dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:id="@+id/txtValoracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valorar receta"
+                android:layout_gravity="center"
+                android:textColor="#363636"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppinssemibold" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:numStars="5"
+                android:stepSize="1"
+                android:isIndicator="false"
+                android:layout_gravity="center"
+                android:scaleX="0.5"
+                android:scaleY="0.5" />
+
+            <EditText
+                android:id="@+id/editComentario"
+                android:layout_width="280dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/edittext_outline_green"
+                android:fontFamily="@font/poppinsregular"
+                android:gravity="center_vertical"
+                android:hint="Escribe una reseña..."
+                android:textColor="#363636"
+                android:textColorHint="#363636"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/btnEnviarValoracion"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/bg_rectangle_green"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="8dp"
+                android:text="Enviar"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppinssemibold"
+                android:clickable="true"
+                android:focusable="true" />
+
+
+        </LinearLayout>
+
+
+        <!-- Comentarios existentes -->
+        <LinearLayout
+            android:id="@+id/layoutComentarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginBottom="100dp">
+
+            <TextView
+                android:id="@+id/txtComentariosTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comentarios"
+                android:textColor="#363636"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppinssemibold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- RecyclerView para comentarios -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerComentarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

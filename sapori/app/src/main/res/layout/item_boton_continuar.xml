@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btnContinuarPago"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:text="CONTINUAR AL PAGO"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:textColor="#FFFFFF"
+    android:background="@drawable/bg_rectangle_green"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="24dp"
+    android:elevation="8dp"
+    android:fontFamily="@font/poppinsbold" /> 

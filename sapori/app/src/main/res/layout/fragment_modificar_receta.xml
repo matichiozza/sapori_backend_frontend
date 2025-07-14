@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp">  <!-- 1. AÑADIDO: Espacio para que el botón no tape el contenido -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ENCABEZADO (sin cambios) -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="#F0EBE4"
+                android:layout_marginBottom="20dp"
+                android:elevation="5dp">
+
+                <ImageView
+                    android:id="@+id/flecha"
+                    android:layout_width="38dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="75dp"
+                    android:src="@drawable/flecha" />
+
+                <TextView
+                    android:id="@+id/text_filtros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/flecha"
+                    android:layout_alignTop="@id/flecha"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="-10dp"
+                    android:text="Modificar receta"
+                    android:textColor="#5E5E5E"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppinssemibold" />
+            </RelativeLayout>
+
+            <!-- TÍTULO (sin cambios) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Ingresa el título:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1">
+                    <EditText
+                        android:id="@+id/edit_titulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Título..."
+                        android:background="@drawable/edittext_bg_rounded_3"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="16dp"
+                        android:textSize="17sp"
+                        android:textColor="#808080"
+                        android:textColorHint="#808080"
+                        android:fontFamily="@font/poppinsregular"
+                        android:inputType="text"
+                        android:gravity="center_vertical" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- IMÁGENES (sin cambios) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Ingresa imágenes:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:id="@+id/btn_agregar_foto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginBottom="20dp" />
+            </HorizontalScrollView>
+
+            <!-- DESCRIPCIÓN (sin cambios) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="Ingresa la descripción:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <EditText
+                android:id="@+id/edit_descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:hint="Descripción..."
+                android:background="@drawable/edittext_bg_rounded_7"
+                android:paddingStart="15dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="9dp"
+                android:textSize="17sp"
+                android:textColor="#808080"
+                android:textColorHint="#808080"
+                android:fontFamily="@font/poppinsregular"
+                android:inputType="text"
+                android:gravity="top|start" />
+
+            <!-- TIPO DE PLATO (sin cambios) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp"
+                android:text="Ingrese el tipo de plato:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:id="@+id/btn_tipo_plato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <!-- INGREDIENTES (sin cambios) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="Ingredientes:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:id="@+id/container_ingredientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="20dp" />
+            </HorizontalScrollView>
+
+            <!-- TIEMPO DE PREPARACIÓN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Tiempo de preparación:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/edit_preparacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Tiempo de preparación..."
+                        android:background="@drawable/edittext_bg_rounded_3"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="16dp"
+                        android:textSize="17sp"
+                        android:textColor="#808080"
+                        android:textColorHint="#808080"
+                        android:fontFamily="@font/poppinsregular"
+                        android:inputType="text"
+                        android:gravity="center_vertical" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp"
+                android:text="Ingresa la cantidad de personas:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+            <!-- NUEVO: Porciones con iconos dentro de círculos verdes -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Contenedor circular para sumar -->
+                <FrameLayout
+                    android:id="@+id/btnSumar"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edittext_bg_rounded_1"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/iconosumar"
+                        android:contentDescription="Icono suma" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvCantidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="#5E5E5E"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppinsbold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" porciones"
+                    android:textColor="#5E5E5E"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppinsregular" />
+
+                <!-- Contenedor circular para restar -->
+                <FrameLayout
+                    android:id="@+id/btnRestar"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_bg_rounded_1"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/iconorestar"
+                        android:contentDescription="Icono resta" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- DESCRIPCIÓN (sin cambios) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="Ingrese los pasos:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <LinearLayout
+                android:id="@+id/container_pasos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp">
+
+            </LinearLayout>
+
+            <!-- Botón para agregar un nuevo paso -->
+            <LinearLayout
+                android:id="@+id/layout_agregar_paso"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/edittext_bg_rounded_7"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_add"
+                    android:contentDescription="Agregar paso" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/btn_modificar_receta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/edittext_bg_rounded_8"
+                android:paddingVertical="12dp"
+                android:layout_marginTop="30dp"
+                android:paddingHorizontal="40dp"
+                android:text="MODIFICAR RECETA"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:fontFamily="@font/poppinsbold"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>

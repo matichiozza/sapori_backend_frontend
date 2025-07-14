@@ -1,0 +1,270 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Tarjeta principal -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="6dp"
+        android:elevation="6dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        android:clipToOutline="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Imagen de fondo -->
+            <ImageView
+                android:id="@+id/imagen_curso"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
+
+            <!-- Capa oscura semi-transparente -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="#80000000" />
+
+            <!-- Contenido superpuesto -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:padding="16dp">
+
+                <!-- Nombre del platillo -->
+                <TextView
+                    android:id="@+id/txt_nombre_curso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cocina Italiana básica"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/poppinsbold" />
+
+                <!-- Autor con ícono con logos superpuestos -->
+                <LinearLayout
+                    android:id="@+id/cartel"
+                    android:layout_below="@id/txt_nombre_curso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical">
+
+                    <!-- FrameLayout para superponer logos -->
+                    <FrameLayout
+                        android:layout_width="20dp"
+                        android:layout_height="20dp">
+
+                        <!-- Logo de abajo (presencial) -->
+                        <ImageView
+                            android:id="@+id/logo_presencial"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/presencial"
+                            app:tint="#FFFFFF"
+                            android:visibility="gone"/>
+
+                        <!-- Logo nuevo arriba del presencial -->
+                        <ImageView
+                            android:id="@+id/logo_nuevo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/virtual"
+                            app:tint="#80FFFFFF"
+                            android:visibility="gone"/> <!-- Podés ajustar opacidad o color -->
+                    </FrameLayout>
+
+                    <!-- Texto modalidad -->
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:id="@+id/modalidad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Presencial"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppinsregular"
+                            android:layout_marginStart="6dp"
+                            android:visibility="gone"/>
+                        <TextView
+                            android:id="@+id/modalidad2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Virtual"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppinsregular"
+                            android:layout_marginStart="6dp"
+                            android:visibility="gone"/>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Fila inferior con íconos -->
+                <LinearLayout
+                    android:id="@+id/dw"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="4dp">
+
+                    <!-- Porciones + Tiempo -->
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp">
+
+                        <View
+                            android:layout_width="110dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/info_background" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp">
+
+                            <!-- Personas -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="16dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="23dp"
+                                    android:layout_height="23dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="1dp"
+                                    android:src="@drawable/precio"
+                                    app:tint="#444444" />
+
+                                <TextView
+                                    android:id="@+id/txt_porciones"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textColor="#444444"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/poppinssemibold"/>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <!-- Calificación -->
+                    <FrameLayout
+                        android:layout_width="125dp"
+                        android:layout_height="40dp">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/info_background" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/duracion_curso"
+                                android:translationX="2dp"
+                                app:tint="#6D6D6D" />
+
+                            <TextView
+                                android:id="@+id/duracion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppinssemibold"
+                                android:text="-"
+                                android:textColor="#444444"
+                                android:textSize="12sp"
+                                android:translationX="4dp" />
+
+                            <TextView
+                                android:id="@+id/unidad_duracion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:fontFamily="@font/poppinssemibold"
+                                android:text="semanas"
+                                android:textColor="#444444"
+                                android:textSize="12sp"
+                                android:translationX="5dp" />
+
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <!-- Overlay blanco para selección -->
+            <View
+                android:id="@+id/overlay_seleccion"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/fondo_seleccionado"
+                android:visibility="gone"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/icono_seleccion"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="160dp"
+                android:src="@drawable/icono_seleccionado"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txt_seleccionada"
+                android:layout_width="wrap_content"
+                android:layout_height="59dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/poppinsbold"
+                android:padding="16dp"
+                android:text="SELECCIONADA"
+                android:textColor="#121212"
+                android:textSize="24sp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

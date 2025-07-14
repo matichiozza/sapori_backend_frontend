@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1. PreviewView de CameraX (fondo) -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"/>
+
+    <!-- 2. Barra superior -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        
+        android:gravity="center_vertical"
+        android:layout_marginTop="36dp">
+
+        <ImageButton
+            android:id="@+id/btnAtrasQr"
+            android:layout_width="48dp"
+            android:layout_marginLeft="18dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/flecha_blanca"
+            android:contentDescription="Atrás"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/titulo_qr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ESCANEA EL QR"
+            android:paddingRight="64dp"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="@font/poppinsbold" />
+    </LinearLayout>
+
+    <!-- 3. Marco de escaneo (centrado) -->
+    <FrameLayout
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/qr_frame_yellow" />
+    </FrameLayout>
+</FrameLayout>

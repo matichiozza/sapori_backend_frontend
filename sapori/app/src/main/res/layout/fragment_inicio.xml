@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_patrones"
+    android:fillViewport="true"
+    android:clipToPadding="false"
+    android:paddingBottom="56dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Encabezado con logo -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="264dp"
+            android:background="#FAF6F1"
+            android:elevation="2dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_conexion1"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Con conexión"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp"
+                app:backgroundTint="#2E8137"
+                app:cornerRadius="12dp" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="40dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo_sapori" />
+
+        </RelativeLayout>
+
+        <!-- TextView para mensaje de bienvenida, oculto por defecto -->
+        <TextView
+            android:id="@+id/txt_bienvenida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_button"
+            android:gravity="center"
+            android:text="¡Bienvenido!"
+            android:textColor="#2E8137"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppinsbold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:visibility="gone" />
+
+        <!-- Contenedor para botones de inicio de sesión y registro -->
+        <LinearLayout
+            android:id="@+id/grupo_inicio_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_iniciar_sesion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppinsbold"
+                android:text="INICIAR SESIÓN"
+                android:textColor="#2E8137"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_registro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="¿No tienes cuenta? Regístrate!"
+                android:textColor="#2E8137"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Contenedor para el contenido normal (título e imágenes) -->
+        <LinearLayout
+            android:id="@+id/contenido_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Título últimas recetas -->
+            <TextView
+                android:id="@+id/txt_ultimas_recetas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Últimas Recetas"
+                android:textColor="#5E5E5E"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppinsbold" />
+
+            <!-- Contenedor dinámico de recetas -->
+            <LinearLayout
+                android:id="@+id/tarjeta_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="60dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

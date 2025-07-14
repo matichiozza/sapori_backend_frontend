@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header con botón cerrar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#F0EBE4"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/btnCerrarDialog"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/cruz"
+                android:padding="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="DETALLE DE SEDE"
+                android:textColor="#5E5E5E"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- Contenido del popup -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Nombre de la sede -->
+            <TextView
+                android:id="@+id/nombreSedeDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Nombre de la Sede"
+                android:textColor="#363636"
+                android:textSize="20sp" />
+
+            <!-- Imagen de la sede -->
+            <ImageView
+                android:id="@+id/imagenSedeDialog"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_image"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/imagen_default" />
+
+            <!-- Información de la sede -->
+            <TextView
+                android:id="@+id/direccionDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Dirección: No disponible"
+                android:textColor="#9D9D9D"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/telefonoDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Teléfono: No disponible"
+                android:textColor="#9D9D9D"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView> 

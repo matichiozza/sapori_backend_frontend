@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:visibility="visible"
+    android:clickable="true"
+    android:focusable="true">
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/popup_container"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_white_rounded1"
+        android:padding="20dp"
+        android:elevation="8dp"
+        android:layout_gravity="center"> <!-- Aca está la clave -->
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/advertencia"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"/>
+
+
+        <TextView
+            android:id="@+id/popup_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Estás seguro que quieres darte de baja al curso?"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/popup_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terminos y políticas"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppinsregular"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/popup_message1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hasta 10 días antes: Reintegro total\nDe 9 a 1 día antes: Reintegro 70%\nDía de inicio: Reintegro 50%\nDespués de iniciar: No hay reintegro"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:layout_gravity="center_horizontal" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/popup_button_baja"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SÍ, DARME DE BAJA"
+                android:backgroundTint="#2E8137"
+                android:textSize="11sp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/poppinssemibold"
+                android:layout_marginEnd="8dp"
+                android:maxLines="1"
+                android:ellipsize="none"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/popup_button_ok"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="NO DARME DE BAJA"
+                android:backgroundTint="#993B38"
+                android:textSize="11sp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/poppinsbold"
+                android:layout_marginStart="8dp"
+                android:maxLines="1"
+                android:ellipsize="none"
+                android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

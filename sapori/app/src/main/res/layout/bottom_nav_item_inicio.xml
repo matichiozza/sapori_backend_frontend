@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingTop="8dp"
+    android:paddingBottom="4dp">
+
+    <!-- Línea superior -->
+    <View
+        android:id="@+id/indicator_line"
+        android:layout_width="30dp"
+        android:layout_height="3dp"
+        android:layout_gravity="top|center_horizontal"
+        android:background="#2E8137"
+        android:visibility="gone" />
+
+    <!-- Ícono -->
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/icon_inicio"
+        android:layout_gravity="center" />
+</FrameLayout>

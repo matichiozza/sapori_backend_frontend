@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnInscribirse"
+        android:fillViewport="true"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Imagen principal con ViewPager2 y botones atrás/favorito -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="315dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPagerImagenes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never" />
+
+
+                <!-- Puntitos indicadores -->
+                <LinearLayout
+                    android:id="@+id/indicatorLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="270dp"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:id="@+id/btnAtras"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="31dp"
+                    android:background="@drawable/bg_circle_green_2"
+                    android:src="@drawable/flecha_blanca"
+                    android:scaleType="fitCenter"
+                    android:padding="7dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="58dp"
+                    android:contentDescription="Atrás" />
+
+
+
+                <FrameLayout
+                    android:layout_width="150dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="230dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_alignParentEnd="true">
+
+                    <!-- Fondo -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/bg_rectangle_green_sedes"
+                        android:scaleType="fitXY" />
+
+                    <!-- Texto -->
+                    <TextView
+                        android:id="@+id/btnSedesDispoTexto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:text="Sedes disponibles"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppinssemibold" />
+                </FrameLayout>
+            </RelativeLayout>
+
+            <!-- Tarjeta con título, autor, info tiempo, rating y porciones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_white_rounded"
+                android:layout_marginTop="-30dp"
+                android:padding="20dp"
+                android:elevation="4dp">
+
+                <TextView
+                    android:id="@+id/txtTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cocina italiana básica"
+                    android:textSize="27sp"
+                    android:textColor="#363636"
+                    android:fontFamily="@font/poppinsbold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="4dp">
+
+                    <FrameLayout
+                        android:layout_width="20dp"
+                        android:layout_height="20dp">
+
+                        <!-- Logo presencial -->
+                        <ImageView
+                            android:id="@+id/logo_presencial"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/presencial_verde"
+                            android:visibility="gone"
+                            android:scaleType="fitCenter" />
+
+                        <!-- Logo nuevo, por defecto oculto -->
+                        <ImageView
+                            android:id="@+id/logo_nuevo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/virtual_verde"
+                            android:visibility="gone"
+                            android:scaleType="fitCenter" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/modalidad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Modalidad "
+                        android:layout_marginStart="10dp"
+                        android:textSize="14sp"
+                        android:textColor="#363636"
+                        android:fontFamily="@font/poppinsregular" />
+                    <!-- Texto modalidad -->
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp">
+
+                        <TextView
+                            android:id="@+id/modalidad2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Presencial"
+                            android:textColor="#363636"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppinsregular"
+                            android:layout_marginTop="-1dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/modalidad3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Virtual"
+                            android:textColor="#363636"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppinsregular"
+                            android:layout_marginTop="-1dp"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:weightSum="3">
+
+                    <!-- Primer ítem (precio) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/precio"
+                            app:tint="@color/verde_activo"
+                            tools:ignore="UseAppTint" />
+
+                        <TextView
+                            android:id="@+id/txtPrecio"
+                            android:layout_marginStart="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="149.999"
+                            android:textColor="#363636"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Segundo ítem (duración) a la derecha -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end|center_vertical">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/duracion_curso"
+                            app:tint="@color/verde_activo"
+                            tools:ignore="UseAppTint" />
+
+                        <TextView
+                            android:id="@+id/txtPorciones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="8 Semanas"
+                            android:textColor="#363636"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Contenido con descripción, ingredientes y pasos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:id="@+id/txtObjetivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Objetivo"
+                    android:textColor="#363636"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txtObjetivo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppinssemibolditalic"
+                    android:textColor="#9D9D9D"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Descripción"
+                    android:textColor="#363636"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txtDescripcion1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppinssemibolditalic"
+                    android:textColor="#9D9D9D"
+                    android:textSize="12sp" />
+
+
+                <!-- Pasos título -->
+                <TextView
+                    android:id="@+id/txtTemario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Temario"
+                    android:textColor="#363636"
+                    android:textSize="16sp" />
+
+                <!-- RecyclerView para pasos -->
+                <LinearLayout
+                    android:id="@+id/layoutTemario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:fontFamily="@font/poppinssemibolditalic"
+                    android:textColor="#9D9D9D"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+
+
+            <!-- Comentarios existentes -->
+            <LinearLayout
+                android:id="@+id/layoutComentarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtRequisitos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Requisitos"
+                    android:textColor="#363636"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppinsmedium" />
+
+
+                <TextView
+                    android:id="@+id/txtUtensillosLista"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#9D9D9D"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/txtPracticas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Prácticas a realizar"
+                    android:textColor="#363636"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/layoutPracticas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón fijo INSCRIBIRSE -->
+    <TextView
+        android:id="@+id/btnInscribirse"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:text="INSCRIBIRSE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_rectangle_green"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="90dp"
+        android:layout_marginHorizontal="20dp"
+        />
+
+</RelativeLayout>

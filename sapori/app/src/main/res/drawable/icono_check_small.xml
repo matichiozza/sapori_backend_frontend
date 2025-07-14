@@ -1,0 +1,7 @@
+<!-- res/drawable/icono_check_small.xml -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/icono_check"
+    android:gravity="center"
+    android:filter="true"
+    android:antialias="true"
+    android:tileMode="disabled" />

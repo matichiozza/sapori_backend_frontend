@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:visibility="visible"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:id="@+id/popup_container"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_white_rounded"
+        android:padding="20dp"
+        android:layout_gravity="center"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/popup_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del ingrediente"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/popup_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingrese la cantidad y unidad:"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppinsregular" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical">
+
+    <EditText
+        android:id="@+id/popup_edittext"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+    android:layout_height="48dp"
+    android:hint="Cantidad..."
+    android:inputType="numberDecimal"
+    android:fontFamily="@font/poppinsmedium"
+    android:background="@drawable/edittext_bg_rounded"
+    android:padding="10dp"
+    android:textColor="#333333"
+    android:textSize="14sp" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_weight="1.3"
+    android:layout_height="48dp"
+    android:layout_marginStart="8dp"
+    android:background="@drawable/edittext_bg_rounded">
+
+    <Spinner
+        android:id="@+id/popup_spinner_unidad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingEnd="36dp"
+        android:background="@android:color/transparent"
+        android:spinnerMode="dropdown" />
+
+    <ImageView
+        android:id="@+id/spinner_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_arrow_drop_down"
+        android:contentDescription="Desplegar opciones" />
+</FrameLayout>
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/popup_button_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#2E8137"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppinsbold" />
+    </LinearLayout>
+</FrameLayout>

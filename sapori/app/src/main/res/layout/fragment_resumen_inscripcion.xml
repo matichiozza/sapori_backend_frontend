@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Header con fondo beige, logo y flecha -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="#F0EBE4"
+        android:layout_marginBottom="20dp"
+        android:elevation="5dp">
+
+        <ImageView
+            android:id="@+id/btnAtras"
+            android:layout_width="38dp"
+            android:layout_height="26dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="75dp"
+            android:src="@drawable/flecha"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Volver" />
+
+        <ImageView
+            android:id="@+id/logo_sapori"
+            android:layout_width="90dp"
+            android:layout_height="44dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="65dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo_sapori" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <!-- Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_rounded"
+            android:padding="18dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resumen"
+                android:textColor="#838383"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="start" />
+
+            <!-- Curso seleccionado -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Curso seleccionado"
+                android:textColor="#363636"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="2dp" />
+            <TextView
+                android:id="@+id/txtCursoSeleccionado"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_field_rounded"
+                android:text="Cocina italiana básica"
+                android:textColor="#363636"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Sede seleccionada -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sede seleccionada"
+                android:textColor="#363636"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="2dp" />
+            <TextView
+                android:id="@+id/txtSedeSeleccionada"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_field_rounded"
+                android:text="Sede Centro"
+                android:textColor="#363636"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Medio de pago -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medio de pago"
+                android:textColor="#363636"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginBottom="2dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_field_rounded"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="10dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_card"
+                    android:layout_marginEnd="8dp" />
+                <TextView
+                    android:id="@+id/txtNumeroTarjeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="**** **** **** 3124"
+                    android:textColor="#363636"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppinsmedium" />
+            </LinearLayout>
+
+            <!-- Precios -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/txtPrecioOriginal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$149.999"
+                    android:textColor="#B0B0B0"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppinsbold"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/txtDescuento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20% OFF"
+                    android:textColor="#B88600"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppinsbold"
+                    android:background="#FFF7D6"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txtPrecioFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$127.499"
+                android:textColor="#363636"
+                android:textSize="28sp"
+                android:fontFamily="@font/poppinsbold"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnConfirmarInscripcion"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="CONFIRMAR INSCRIPCIÓN"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppinsbold"
+            android:background="@drawable/bg_rectangle_green"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+</LinearLayout> 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/txtNumeroPaso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paso 1"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#333333" />
+
+    <TextView
+        android:id="@+id/txtDescripcionPaso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descripción del paso..."
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:paddingTop="4dp" />
+
+</LinearLayout>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="#F0EBE4"
+                android:layout_marginBottom="20dp"
+                android:elevation="5dp">
+
+                <ImageView
+                    android:id="@+id/btn_cerrar"
+                    android:layout_width="38dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="75dp"
+                    android:src="@drawable/cruz" />
+
+                <TextView
+                    android:id="@+id/text_filtros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/btn_cerrar"
+                    android:layout_toEndOf="@id/btn_cerrar"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="-10dp"
+                    android:text="Filtros"
+                    android:textColor="#5E5E5E"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/poppinssemibold" />
+            </RelativeLayout>
+
+            <!-- Ordenar por -->
+            <TextView
+                android:id="@+id/text_ordenar_por"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Ordenar por:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/container_ordenamiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <Button
+                        android:id="@+id/btn_orden_az"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/edittext_bg_rounded_4"
+                        android:text="Alfabético"
+                        android:textColor="#808080"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:paddingHorizontal="20dp"
+                        android:textAllCaps="false" />
+
+                    <Button
+                        android:id="@+id/btn_orden_nuevo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/edittext_bg_rounded_4"
+                        android:text="Más nuevo"
+                        android:textColor="#808080"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:paddingHorizontal="20dp"
+                        android:textAllCaps="false" />
+
+                    <Button
+                        android:id="@+id/btn_orden_antiguo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/edittext_bg_rounded_4"
+                        android:text="Más antiguo"
+                        android:textColor="#808080"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:paddingHorizontal="20dp"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Por nombre de usuario -->
+            <TextView
+                android:id="@+id/text_por_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Por nombre de usuario:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/edit_busqueda"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Buscar usuario..."
+                        android:background="@drawable/edittext_bg_rounded_3"
+                        android:paddingStart="45dp"
+                        android:paddingEnd="16dp"
+                        android:textSize="15sp"
+                        android:textColor="#808080"
+                        android:textColorHint="#808080"
+                        android:fontFamily="@font/poppinsbold"
+                        android:inputType="text"
+                        android:gravity="center_vertical" />
+
+                    <ImageView
+                        android:id="@+id/icono_lupa"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical|start"
+                        android:layout_marginStart="12dp"
+                        android:src="@drawable/ic_lupa"
+                        android:contentDescription="Ícono de búsqueda" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Por tipo de plato -->
+            <TextView
+                android:id="@+id/text_por_tipo_plato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp"
+                android:text="Por tipo de plato:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/container_tipos_plato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+
+            </HorizontalScrollView>
+
+            <!-- NUEVOS BOTONES DE INGREDIENTES -->
+            <!-- Por ingrediente -->
+            <TextView
+                android:id="@+id/text_por_ingrediente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="20dp"
+                android:text="Por ingrediente:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <!-- Quitar ingrediente -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_añadir_ingrediente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_ingrediente_bg"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Añadir ingrediente"
+                android:textAllCaps="false"
+                android:textColor="#808080"
+                android:textSize="15sp"
+                app:icon="@drawable/icon_add"
+                app:iconPadding="8dp"
+                app:iconGravity="textStart"
+                app:iconTint="#2E8137" />
+
+
+            <TextView
+                android:id="@+id/text_quitar_ingrediente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="20dp"
+                android:text="Quitar ingrediente:"
+                android:textColor="#5E5E5E"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinsbold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_Quitar_ingrediente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_ingrediente_bg"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Quitar ingrediente"
+                android:textAllCaps="false"
+                android:textColor="#808080"
+                android:textSize="15sp"
+                app:icon="@drawable/icon_remove"
+                app:iconPadding="8dp"
+                app:iconGravity="textStart"
+                app:iconTint="#FF2D2D" />
+
+            <!-- Botón Limpiar filtro -->
+            <Button
+                android:id="@+id/btn_limpiar_filtro"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/poppinssemibold"
+                android:paddingHorizontal="16dp"
+                android:text="Limpiar filtro"
+                android:elevation="4dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>

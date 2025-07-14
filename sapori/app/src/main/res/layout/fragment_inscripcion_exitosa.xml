@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logo_sapori"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/logo_sapori"
+            android:contentDescription="Logo Sapori" />
+
+        <!-- Card verde con bordes redondeados arriba -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_inscripcion_exitosa"
+            android:layout_marginTop="30dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡INSCRIPCIÓN REALIZADA!"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppinsbold"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/txtCurso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cocina básica italiana"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/txtSede"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sede Centro"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:layout_marginBottom="2dp" />
+
+            <TextView
+                android:id="@+id/txtDuracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- 5 semanas -"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:id="@+id/btnIrAlCurso"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="IR AL CURSO"
+                android:textAllCaps="true"
+                android:textColor="#388E3C"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppinsbold"
+                android:background="@drawable/bg_boton_blanco_redondeado"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Últimas Recetas dentro del bloque verde -->
+            <TextView
+                android:id="@+id/txt_ultimas_recetas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Últimas Recetas"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppinsbold" />
+
+            <LinearLayout
+                android:id="@+id/tarjeta_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="0dp"
+                android:layout_marginBottom="0dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView> 

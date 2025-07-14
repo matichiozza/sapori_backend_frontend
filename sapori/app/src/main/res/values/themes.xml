@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Sapori" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Personaliza si querés -->
+        <item name="colorPrimary">#FAF6F1</item>
+        <item name="colorPrimaryDark">#25662F</item>
+        <item name="colorAccent">#2F6E3C</item>
+    </style>
+
+
+
+</resources>

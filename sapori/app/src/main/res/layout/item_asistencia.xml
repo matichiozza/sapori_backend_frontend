@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <TextView
+        android:id="@+id/txtClase"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="1"
+        android:textColor="#444"
+        android:textSize="15sp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/txtFecha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="16-04-2025"
+        android:textColor="#444"
+        android:textSize="15sp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/txtEstado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="PRESENTE"
+        android:textColor="#2E7D32"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:gravity="center" />
+
+</LinearLayout> 

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Toolbar -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="20dp"
+                android:background="#F0EBE4"
+                android:elevation="5dp">
+
+                <ImageView
+                    android:id="@+id/btn_cerrar"
+                    android:layout_width="38dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="75dp"
+                    android:src="@drawable/flecha" />
+
+                <TextView
+                    android:id="@+id/text_filtros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/btn_cerrar"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_toEndOf="@id/btn_cerrar"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:text="VER ASISTENCIA"
+                    android:textColor="#5E5E5E"
+                    android:textSize="28sp" />
+            </RelativeLayout>
+
+            <!-- Contenedor visual -->
+            <FrameLayout
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rectangulo_redondeado">
+
+                <!-- Encabezado -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Clase"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textSize="18sp"
+                        android:textColor="#5E5E5E" />
+
+                    <!-- Línea separadora -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="4dp"
+                        android:background="#BDBDBD" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Fecha"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textSize="18sp"
+                        android:textColor="#5E5E5E" />
+
+                    <!-- Línea separadora -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="4dp"
+                        android:background="#BDBDBD" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Asistencia"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textSize="18sp"
+                        android:textColor="#5E5E5E" />
+                </LinearLayout>
+
+                <!-- RecyclerView para las filas de asistencia -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerAsistencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="72dp"
+                    android:overScrollMode="never"
+                    android:paddingHorizontal="8dp"
+                    android:paddingBottom="16dp"
+                    android:clipToPadding="false"/>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout> 
